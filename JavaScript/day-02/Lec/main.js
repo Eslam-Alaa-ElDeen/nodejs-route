@@ -388,3 +388,59 @@ Use when:
 // }
 
 //******************************  scope share and clouser ******************************* */
+
+
+
+//******************************  typs of server ******************************* */
+// 1-didicated server for each service  --> for large org
+// 2-single didicated server for handel all task  -> for samll org
+
+
+// physical server and virtual server
+
+//****************************** URL ******************************* */
+// url==> Uniform resource locator
+// uri==> Uniform resource identifir
+
+
+//****************************** Protocols ******************************* */
+// ser of rules between sender and resever that govern the comm between each other
+//HTTP.HTTPS.FTP.SMTP
+
+//HTTP -> hypertext transfer protocol  : transfer web pages accros the internet
+//http is stateLess protocole everytime a logIn in need a new requst and make a token the can server recoginize me
+
+//HTTPS -> hypertext transfer protocol  :(man in the middle -> target the all requst on the server )
+
+//****************************** DNS ******************************* */
+// dns -> domain name server
+// dns -> convert the name of wepsite to IP address
+
+
+//****************************** port ******************************* */
+//every domian has port num uniqe 
+
+
+//****************************** NgIX ******************************* */  
+//ngix || apache -> web server
+
+
+//****************************** HTTP requst respose cycle ******************************* */
+
+
+
+//****************************** HTTP requst with postman ******************************* */
+// have req header and req body
+
+// i have 4 main methods {get ,post , patch , delete}
+
+// get send data on qurey params (URL)  on search or share data
+// post send data on body
+//patch update on data (send the changed data only)
+// delete -> delete the data
+
+// we use the postman instide of front end the we can test the API on it
+//while it works on post man then the back end every thing is OK
+
+//****************************** HTTP response ******************************* */
+//response status{search on google on status code cats}
