@@ -1,0 +1,62 @@
+Q1{
+    1-foreach:
+        - i can use it with array
+        - make the whole code inside run in the same time (async code behevier)
+        -when i use it with arr take callbackFun with 3 parameter(ele,index,arr)
+        -can not use break in it
+
+    2-forof:
+        -used to loop on array or object
+        -make the whole code inside run line by line (sync code behevier)
+        -can use break in it
+}
+
+//==================================================================================================================
+
+Q2{
+    1-hoisting:
+        -make the intalization of variable or function declarations on the top of code 
+        -when it happen with var give the variable undefined value 
+        -when it happen with let or const that come up with error but still happend a hoisting make a TDM
+
+    2-Temporal Dead Zone:
+        -is a the period between scope and declaration of let or const
+        -the variable during this period come with Error and cannot be access
+
+}
+
+//=======================================================================================================================
+
+Q3{
+    1- "==":
+        compare between the value only
+    2- "===" :
+        compare between the value and the type of value
+}
+
+//========================================================================================================================
+
+Q4{
+    try-catch:
+         -used to handel the error inside on try and if error happend then we handel 
+           on catch
+
+         -and also used caz when ever happen a error the code still running what after this error
+           and don't stop
+
+         -its very important in Async operation with Async&await ,it catch the rejected promises and eny error
+}
+
+//=======================================================================================================================
+
+Q5{
+    1-Type Conversion:
+        -Type conversion is the explicit conversion of a value from one data type to another
+          using functions like Number() or String()
+           Ex: Number("10") // 10
+
+    2-Type Coercion:
+        -Type coercion is the automatic conversion of data types by JS
+           Ex: "10" + 5 // "105"
+           Ex" "10" - 5 // 5 -> 5 is a number
+}
