@@ -38,11 +38,11 @@ The purpose of this repository is to:
 
 ## JavaScript
 
-- [ ] Modern JavaScript
-- [ ] Async Programming
-- [ ] Promises
-- [ ] Async/Await
-- [ ] Event Loop
+- [x] Modern JavaScript
+- [x] Async Programming
+- [x] Promises
+- [x] Async/Await
+- [x] Event Loop
 
 ---
 
