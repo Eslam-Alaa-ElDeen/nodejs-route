@@ -125,3 +125,161 @@
 // for(let key in obj){
 //     console.log(obj[key]);
 // }
+
+
+
+
+///////////////////////{part 2}///////////////////////////////////
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// // array methods
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+// const users=[
+//     {
+//         name:"eslam",
+//         age:29,
+//         collage:true
+//     },
+//         {
+//         name:"ahmed",
+//         age:20,
+//         collage:true
+//     },
+//         {
+//         name:"mohamed",
+//         age:19,
+//         collage:false
+//     }
+// ]
+
+
+//find-->return undefined or the ele matching return the first match 
+//findIndex -> return the index of ele that matches the condition 
+// const userEx=users.find((user)=>{
+//     return user.name=="eslam"
+// })
+
+// if (!userEx) {
+//     console.log("not exist");
+// }else{
+//     console.log("user exist");
+// }
+
+
+//filter-->always return the array are element matches the condition
+// const userEx=users.filter((user)=>{
+//     return user.name=="eslam"
+// })
+
+// if (!userEx) {
+//     console.log("not exist");
+// }else{
+//     console.log("user exist");
+// }
+
+//map-->make loop on array to edit on it or something like that
+// const userEx=users.map((user)=>{
+//     return {id:user.age,name:user.name}
+// })
+
+// console.log(userEx);
+
+//slice and split
+
+//slice -> make a slice of string or array  (start index,end index)
+// split => convert string to array with split of the separator ("separator")
+// let s="mohamed salah is the GOAT"
+// let arr=s.split(" ");
+// console.log(arr);
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// // closure
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function outer(){
+//     let x=5;
+//     return function inner(){
+//         console.log(x);
+//     }
+// }
+// let outcall=outer();
+// outcall();
+
+//the outer function make a scope call closure that keep the value of the varabile on it
+// function counter(){
+//     let count=0;
+//     return function(){
+//         count++;
+//         console.log(count);
+//     }
+// }
+// const increment=counter();
+// increment();
+// increment()
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// //destructing
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// let user={
+//     name:"eslam",
+//     age:22,
+//     wife:{
+//         age:11,
+//         name:"nameOfWoman",
+//         son:{
+//             name:"omar",
+//             age:2
+//         }
+//     }
+// }
+
+// const{name,age,wife}=user;
+// const{name,age,son}=user.wife;
+// const{name:Wname,age:Wage,son}=user.wife; //make the elise to not come up with error
+// console.log(name,age);
+
+// destructing ->for array and obj or string
+
+// const nums=["eslam","ahemd","mohamed"]  => take the index on consedration on destruct on arr
+
+// const[x,z,y]=nums;
+// const[,z,]=nums;
+// console.log(z);
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// //spreed operator and rest param
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// let user={
+//     name:"eslam",
+//     age:22,
+//     wife:{
+//         age:11,
+//         name:"nameOfWoman",
+//         son:{
+//             name:"omar",
+//             age:2
+//         }
+//     }
+// }
+
+// const{age,name,...data}=user; //rest :  must be last element
+// console.log(data);
+
+// const arr1=[3,4,3,52,3];
+// const arr2=[...arr1];  //spreed
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// //heap VS stack
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// //Sync VS Async code
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// let obj=structuredClone(obj1);
