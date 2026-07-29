@@ -37,7 +37,7 @@ The purpose of this repository is to:
 # 📚 Course Roadmap
 
 ## JavaScript
-
+- [X] JS basics
 - [x] Modern JavaScript
 - [x] Async Programming
 - [x] Promises
