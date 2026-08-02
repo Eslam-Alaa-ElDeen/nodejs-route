@@ -48,12 +48,12 @@ The purpose of this repository is to:
 
 ## Node.js
 
-- [ ] Node.js Fundamentals
-- [ ] Core Modules
-- [ ] NPM
-- [ ] File System
-- [ ] Events
-- [ ] Streams
+- [x] Node.js Fundamentals
+- [x] Core Modules
+- [x] NPM
+- [x] File System
+- [x] Events
+- [x] Streams
 - [ ] Buffers
 
 ---
