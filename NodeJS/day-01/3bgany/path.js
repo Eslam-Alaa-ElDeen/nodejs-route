@@ -1,3 +1,4 @@
+const { log } = require("console");
 const path=require("path");
 
 // console.log({__dirname});
@@ -41,4 +42,6 @@ console.log(path.format(
   name: '3bgany'
 }
 ));
+
+
 
