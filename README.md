@@ -61,10 +61,10 @@ The purpose of this repository is to:
 
 ## Express.js
 
-- [ ] Express Fundamentals
-- [ ] Routing
-- [ ] Modules
-- [ ] Middleware
+- [x] Express Fundamentals
+- [x] Routing
+- [x] Modules
+- [x] Middleware
 - [ ] MVC Architecture
 - [ ] Request & Response
 - [ ] Environment Variables
