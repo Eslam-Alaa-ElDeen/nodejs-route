@@ -54,7 +54,8 @@ The purpose of this repository is to:
 - [x] File System
 - [x] Events
 - [x] Streams
-- [ ] Buffers
+- [x] Buffers
+- [x] HTTP Server
 
 ---
 
@@ -306,7 +307,7 @@ nodejs-route/
 
 # 📈 Progress
 
-**Completed:** 0%
+**Completed:** 15%
 
 Progress will be updated as I complete each section.
 
