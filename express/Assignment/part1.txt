@@ -1,0 +1,42 @@
+Q1{
+    =>the event Loop is the part that helps Node.js handle many tasks
+    =>it checks if there are tasks that are finished and ready to run
+    =>it allows Node.js to do other work while waiting for slow tasks
+    =>this helps Node.js handle requests without stopping
+}
+
+Q2{
+    =>libuv is a library used by Node.js
+    =>it helps Node.js handle asynchronous operations like file and network operations
+    =>it also provides the Event Loop and Thread Pool
+    =>this helps Node.js run tasks without blocking the main thread
+}
+
+Q3{
+    =>when Node.js starts an asynchronous operation, it does not wait for it to finish
+    =>the operation is handled by the system or Libuv
+    =>when the operation finishes, its callback is added to the Event Queue
+    =>the Event Loop later sends the callback to the Call Stack to run
+}
+
+Q4{
+    =>the Call Stack runs the JavaScript code that is currently executing
+    =>the Event Queue stores callbacks that are ready to run
+    =>the Event Loop checks the Call Stack and moves ready callbacks from the Queue to the Stack
+    =>together, they help Node.js handle asynchronous code
+}
+
+Q5{
+    =>the Thread Pool is a group of threads used by Libuv for some heavy tasks
+    =>for example, some file system and cryptography operations can use it
+    =>the default Thread Pool size is 4 threads
+    =>ex/
+        UV_THREADPOOL_SIZE=8 node app.js
+}
+
+Q6{
+    =>blocking code makes Node.js wait until the task finishes
+    =>this can stop other requests from being handled
+    =>non-blocking code starts the task and continues doing other work
+    =>node.js uses non-blocking operations to handle many requests efficiently
+}
