@@ -7,7 +7,7 @@ let data=[
     {name:"eslam",age:20,id:1}
 ]
 
-app.use(express.json()) 
+app.use(express.json())
 
 app.get("/",(req,res,next)=>{
     res.status(200).json({msg:"in home page"})
