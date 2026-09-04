@@ -1,0 +1,1 @@
+export{default as blogRouter} from './blog.controller.js';

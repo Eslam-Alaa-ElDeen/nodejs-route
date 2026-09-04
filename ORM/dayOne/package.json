@@ -1,0 +1,20 @@
+{
+  "name": "folderstructure",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start:dev": "cross-env NODE_ENV=development node --watch src/main.js",
+    "start:prod": "cross-env NODE_ENV=production node --watch src/main.js"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.24.3",
+    "sequelize": "^6.37.8"
+  }
+}
