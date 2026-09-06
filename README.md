@@ -65,9 +65,9 @@ The purpose of this repository is to:
 - [x] Routing
 - [x] Modules
 - [x] Middleware
-- [ ] MVC Architecture
-- [ ] Request & Response
-- [ ] Environment Variables
+- [x] MVC Architecture
+- [x] Request & Response
+- [x] Environment Variables
 
 ---
 
@@ -82,25 +82,25 @@ The purpose of this repository is to:
 
 ## Database Fundamentals
 
-- [ ] Database Basics
-- [ ] Relationships
-- [ ] Normalization
+- [x] Database Basics
+- [x] Relationships
+- [x] Normalization
 
 ---
 
 ## SQL + Node.js
 
-- [ ] MySQL
-- [ ] CRUD
-- [ ] Joins
-- [ ] Transactions
+- [x] MySQL
+- [x] CRUD
+- [x] Joins
+- [x] Transactions
 
 ---
 
 ## ORM
 
-- [ ] ORM Concepts
-- [ ] Sequelize / ORM Usage
+- [x] ORM Concepts
+- [x] Sequelize / ORM Usage
 
 ---
 

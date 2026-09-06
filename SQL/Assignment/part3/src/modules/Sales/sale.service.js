@@ -48,7 +48,7 @@ const getSaleForProduct=async(req,res)=>{
         if (dataSearch?.length==0) {
             return res.status(404).json({msg:"not found any sales"})
         }
-
+        
         return res.status(200).json({data:dataSearch})
     } catch (error) {
         return res.status(404).json(error.message)

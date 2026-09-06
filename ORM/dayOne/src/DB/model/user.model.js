@@ -5,8 +5,8 @@ export const userModel = sequelize.define("User", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    allowNull: false,
     field: "u_id",
+    autoIncrement:true
   },
   fName: {
     type: DataTypes.STRING,
@@ -35,11 +35,18 @@ export const userModel = sequelize.define("User", {
     field: "u_email",
     validate:{
         isEmail:{msg:"the email must be in email format like `plaseHolder@gamil.com`"},
-        checkLastName(value){
-            if (value=="eslam@gamil.com") {
-                throw new Error("pls enter a email expet : eslam@gamil.com")
-            }
-        }
     }
   },
+  userName:{
+    type:DataTypes.VIRTUAL,
+    set(value){
+      const[fName,lName]=value.split(" ")||[];
+      this.setDataValue("fName",fName)
+      this.setDataValue("lName",lName)
+    },
+    // to return userName on result
+    get(){
+      return `${this.getDataValue("fName")} ${this.getDataValue("lName")}`
+    }
+  }
 });
