@@ -11,6 +11,7 @@
     "start:prod": "cross-env NODE_ENV=production node --watch src/main.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "cross-env": "^10.1.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",

@@ -1,14 +1,17 @@
-import{config}from"dotenv";
-import {resolve} from "node:path";
+import { config } from "dotenv";
+import { resolve } from "node:path";
 
-config({path:resolve(`.env.${process.env.NODE_ENV??"development"}`)})
+config({ path: resolve(`.env.${process.env.NODE_ENV ?? "development"}`) });
 
-export const PORT=parseInt(process.env.PORT|| 3000);
+export const PORT = parseInt(process.env.PORT || 3000);
 
-export const DB_HOST=process.env.HOST;
-export const DB_PORT=process.env.DB_PORT;
-export const DB_USER=process.env.DB_USER;
-export const DB_PASSWORD=process.env.DB_PASSWORD;
-export const DB_NAME=process.env.DB_NAME;
+const getDatabaseValue = (name, fallback, placeholder) => {
+  const value = process.env[name]?.trim();
+  return !value || value.toLowerCase() === placeholder ? fallback : value;
+};
 
-
+export const DB_HOST = getDatabaseValue("HOST", "localhost", "");
+export const DB_PORT = getDatabaseValue("DB_PORT", "3306", "");
+export const DB_USER = getDatabaseValue("DB_USER", "root", "db user");
+export const DB_PASSWORD = getDatabaseValue("DB_PASSWORD", "root", "db pass");
+export const DB_NAME = getDatabaseValue("DB_NAME", "eslam_", "name of db");

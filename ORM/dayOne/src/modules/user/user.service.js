@@ -1,44 +1,68 @@
 import { Op } from "sequelize";
-import { successResponse } from "../../common/utils/success.respoce.js";
-import { sequelize } from "../../DB/connection.db.js";
 import { userModel } from "../../DB/model/user.model.js";
-import { golbalErrorHandler } from "../../middleware/error.middlerware.js";
 
-export const getAllUsers = async (inputs) => {
-  const data = await userModel.findAll({
-    attributes:[["u_first_name","first_name"],["u_last_name","last_name"]],
-    where:{
-        [Op.or]:[
-          {gender:{[Op.eq]:"female"}},
-          {fName:{[Op.eq]:"eslam"}}
-        ]
-      }
+export const getAllUsers = async ({
+  page = 1,
+  limit = 20,
+  search,
+  gender,
+} = {}) => {
+  const safePage = Math.max(Number(page) || 1, 1);
+  const safeLimit = Math.min(Math.max(Number(limit) || 20, 1), 100);
+  const where = {};
+
+  if (gender) where.gender = gender;
+  if (search) {
+    where[Op.or] = [
+      { fName: { [Op.like]: `%${search}%` } },
+      { lName: { [Op.like]: `%${search}%` } },
+      { email: { [Op.like]: `%${search}%` } },
+    ];
+  }
+
+  return userModel.findAndCountAll({
+    where,
+    limit: safeLimit,
+    offset: (safePage - 1) * safeLimit,
+    order: [["id", "ASC"]],
   });
+};
 
-  const dataOne=await userModel.findOne({
-    where:{
-      id:4
-    }
-  })
-
-  const user=await userModel.findOrCreate({
-    where:id=5,
-    defaults:inputs
-  })
-
-  //findOrCreate ==> should come with where 
-
-   return dataOne;
-  //  return data;
+export const getUserById = async (id) => {
+  const user = await userModel.findByPk(id);
+  if (!user)
+    throw Object.assign(new Error("User not found"), {
+      cause: { status: 404 },
+    });
+  return user;
 };
 
 export const addUser = async (inputs) => {
-  const { id,userName, email, gender, age } = inputs;
-  // console.log(firstName,lastName,email,gender,age);
-  // const data = await userModel.create(inputs,{fields:["userName","fName","id","lName","email","age"]});
-    const data = await userModel.upsert(inputs,{fields:["userName","fName","id","lName","email","age"]});
-    return data;
+  return userModel.create(inputs);
+};
 
-  //create bulk ==> make a bulk of fields  take the inputs as array of object
-  //upsert ==>if user exist return it if not add it
+export const updateUser = async (id, inputs) => {
+  const user = await getUserById(id);
+  const fields = ["fName", "lName", "age", "gender", "email", "userName"];
+  fields.forEach((field) => {
+    if (inputs[field] !== undefined) user[field] = inputs[field];
+  });
+  await user.save();
+  return user;
+};
+
+export const deleteUser = async (id) => {
+  const user = await getUserById(id);
+  await user.destroy();
+  return { id: user.id, deleted: true };
+};
+
+export const restoreUser = async (id) => {
+  const user = await userModel.scope(null).findByPk(id, { paranoid: false });
+  if (!user)
+    throw Object.assign(new Error("User not found"), {
+      cause: { status: 404 },
+    });
+  await user.restore();
+  return userModel.findByPk(id);
 };

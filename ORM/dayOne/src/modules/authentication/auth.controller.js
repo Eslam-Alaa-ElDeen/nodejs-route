@@ -1,19 +1,22 @@
-// import {Router} from 'express';
-// import express from 'express';
-// import { login, signup } from './auth.service.js';
-// import { successResponse } from '../../common/utils/success.respoce.js';
+import { Router } from "express";
+import { successResponse } from "../../common/utils/success.respoce.js";
+import { login, signup } from "./auth.service.js";
 
+const router = Router();
 
-// const router = Router();
+router.post("/signup", async (req, res) => {
+  const data = await signup(req.body);
+  return successResponse({
+    res,
+    data,
+    message: "Signup successful",
+    status: 201,
+  });
+});
 
-// router.get('/login', async(req, res) => {
-//     const data=login(req.body);
-//     return successResponse({res, data, message:'login done', status:200});
-// });
+router.post("/login", async (req, res) => {
+  const data = await login(req.body);
+  return successResponse({ res, data, message: "Login successful" });
+});
 
-// router.get('/signup', async (req, res) => {
-//     const data=signup(req.body);
-//     return successResponse({res, data, message:'signup done', status:200});
-// });
-
-// export default router;
+export default router;
