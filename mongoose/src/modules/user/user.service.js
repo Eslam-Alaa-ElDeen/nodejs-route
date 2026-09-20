@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { userModel } from "../../DB/model/user.model.js";
+import { toObjectId } from "../../common/utils/toObjectId.js";
 
 
 
@@ -50,7 +51,10 @@ export const insertUser = async (inputs) => {  // all fail or all success
 };
 
 export const getAllUsers = async (inputs) => {
-  return await userModel.find();
+  return await userModel.find({
+    IDS:{$elemMatch:{$eq:toObjectId("6aae48778f5534c32ae25e67")}}  // i have an array of ids and found with her
+  })
+
 };
 
 

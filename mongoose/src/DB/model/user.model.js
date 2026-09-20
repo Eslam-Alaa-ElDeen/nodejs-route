@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema(
     maxLength:44,
     validate: {
       validator: function(value) {
-        if (value === "lana del ray") {
+        if (value === "admin") {
           return false;
         }
 
@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema(
       },
 
       message: function(prop) {
-        return `lana del ray is not a valid first name`;
+        return `admin is not a valid first name`;
       }
     }
   },
@@ -48,5 +48,22 @@ const userSchema = new mongoose.Schema(
   collection:"user_model"
  }
 );
+
+
+// const userSchema = new mongoose.Schema({    //make a message for validate the type string
+//   name: {
+//     type: String,
+//     message: 'Name must be a string'
+//   }
+// });
+
+    // or use the validate method
+
+    // validate: {
+    //   validator: function (value) {
+    //     return typeof value === 'string'; // on false value goes to messge
+    //   },
+    //   message: 'Name must be a string'
+    // }
 
 export const userModel = mongoose.model("user", userSchema);

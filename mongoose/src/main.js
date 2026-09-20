@@ -14,7 +14,7 @@ app.use(express.json());
 await connectionDB();
 
 
-console.log(Object.values(GenderEnum));
+
 
 app.get("/", (req, res) => res.send("welcome to Eslam_3laa server"));
 
