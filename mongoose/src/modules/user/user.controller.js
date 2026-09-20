@@ -10,8 +10,8 @@ router.use(express.json())
 router.get("/",async(req,res)=>{
     const dataRet=await getAllUsers()
 
-    if(dataRet.length==0)
-        throw new Error("no data founded",{cause:{status:404}});
+    // if(dataRet.length==0)
+    //     throw new Error("no data founded",{cause:{status:404}});
     successResponse({
         res,
         status:200,
@@ -23,8 +23,10 @@ router.get("/",async(req,res)=>{
 router.get("/:id",async(req,res)=>{
     const dataRet=await findOne(req.params.id)
 
-    if(dataRet.length==0)
-        throw new Error("no data founded",{cause:{status:404}});
+    // if(dataRet.length==0)
+    //     throw new Error("no data founded",{cause:{status:404}});
+
+    //have a look in find one and replase and find one and update
     successResponse({
         res,
         status:200,

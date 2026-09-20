@@ -1,0 +1,1 @@
+export{default as prodRouter}from'./prod.controller.js'

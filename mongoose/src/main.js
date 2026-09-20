@@ -3,7 +3,7 @@ import { GenderEnum } from "./common/enum/user.enum.js";
 import { connectionDB } from "./DB/connection.db.js";
 import { userModel } from "./DB/model/user.model.js";
 import { globalErrorHandling } from "./middleware/index.js";
-import {userRouter } from "./modules/index.js";
+import {prodRouter, userRouter } from "./modules/index.js";
 import express from "express";
 
 
@@ -19,6 +19,7 @@ await connectionDB();
 app.get("/", (req, res) => res.send("welcome to Eslam_3laa server"));
 
 app.use("/user", userRouter);
+app.use("/product",prodRouter)
 
 
 app.use("{/*dummy}", (req, res) => {

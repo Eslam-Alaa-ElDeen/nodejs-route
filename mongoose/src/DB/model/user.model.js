@@ -45,9 +45,22 @@ const userSchema = new mongoose.Schema(
  },{
   timestamps:true,
   strict:true,
-  collection:"user_model"
- }
+  collection:"user_model",
+  toJSON:{virtuals:true},
+  toObject:{virtuals:true},
+  optimisticConcurrency:true
+}
 );
+// setter and getter
+userSchema.virtual("userName").set(function(v){  //v holds the value of username
+  const[firstName,lastName]=v.split(" ");  // make split on the user name to set the value of the FN and LN 
+  this.set({firstName,lastName}) // set the value here this holds the userModel
+}).get(function(){
+  return `${this.firstName} ${this.lastName}`  // this value will be on userName 
+})
+
+
+
 
 
 // const userSchema = new mongoose.Schema({    //make a message for validate the type string

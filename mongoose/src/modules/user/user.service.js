@@ -35,7 +35,7 @@ export const addUsers = async (inputs) => {  // all fail or all success
 
 export const insertUser = async (inputs) => {  // all fail or all success    
     try {
-        const data = await userModel.insertMany(inputs, {  //take array and i didn't make [] as the inputs is array of obj
+        const data = await userModel.insertOne(inputs, {  //take array and i didn't make [] as the inputs is array of obj
             timestamps: false,
             throwOnValidationError:true,  //to insert if one document fails she continue inserting and should come with {ordered:true}
             ordered:false
@@ -51,20 +51,45 @@ export const insertUser = async (inputs) => {  // all fail or all success
 };
 
 export const getAllUsers = async (inputs) => {
-  return await userModel.find({
-    IDS:{$elemMatch:{$eq:toObjectId("6aae48778f5534c32ae25e67")}}  // i have an array of ids and found with her
-  })
+  const data= await userModel.findOne({
+    // //IDS:{$elemMatch:{$eq:toObjectId("6aae48778f5534c32ae25e67")}}  // i have an array of ids and found with her
+    _id:"6aae48778f5534c32ae25e67"
+  }).lean()   // once i make .lean() on vertual key come in the output
+
+    console.log({_id:data._id});  // object id
+    console.log({id:data.id});  // type string
+    return data;
 
 };
 
 
 export const updateUser=async(id,inputs)=>{
-    const data=await userModel.findByIdAndUpdate({
-        _id:id
-    },{
-        name:inputs.name
-    })
-    return data;
+    const data = await userModel.updateOne(
+    { _id: id },
+    {
+        $set: {
+            firstName: "george"
+        },
+
+        $unset: {
+            age: ""
+        },
+
+        $push: {
+            playList: {
+                $each: [
+                    "george wassouf",
+                    "tamer hosny",
+                    "ramy sabry"
+                ]
+            }
+        }
+    },
+    {
+        runValidators: true
+    }
+);
+return data;
 }
 
 export const deleteUser=async (id)=>{
