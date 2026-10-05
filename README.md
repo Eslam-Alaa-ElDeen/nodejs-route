@@ -106,38 +106,37 @@ The purpose of this repository is to:
 
 ## MongoDB
 
-- [ ] MongoDB Fundamentals
-- [ ] CRUD
-- [ ] Aggregation
+- [x] MongoDB Fundamentals
+- [x] CRUD
+- [x] Aggregation
 
 ---
 
 ## Mongoose (ODM)
 
-- [ ] Schemas
-- [ ] Models
-- [ ] Validation
-- [ ] Population
-- [ ] Middleware
+- [x] Models
+- [x] Validation
+- [x] Population
+- [x] Middleware
 
 ---
 
 ## Validation
 
-- [ ] Input Validation
-- [ ] Request Validation
+- [x] Input Validation
+- [x] Request Validation
 
 ---
 
 ## Security
 
-- [ ] Authentication
-- [ ] Authorization
-- [ ] JWT
-- [ ] Password Hashing (bcrypt)
-- [ ] Encryption
+- [x] Authentication
+- [x] Authorization
+- [x] JWT
+- [x] Password Hashing (bcrypt)
+- [x] Encryption
 - [ ] Helmet
-- [ ] CORS
+- [x] CORS
 - [ ] CSRF Protection
 - [ ] Rate Limiting
 
@@ -153,7 +152,7 @@ The purpose of this repository is to:
 
 ## Error Handling
 
-- [ ] Global Error Handler
+- [x] Global Error Handler
 - [ ] Custom Errors
 - [ ] Async Error Handling
 
@@ -169,15 +168,15 @@ The purpose of this repository is to:
 
 ## Relationships
 
-- [ ] One-to-One
-- [ ] One-to-Many
-- [ ] Many-to-Many
+- [x] One-to-One
+- [x] One-to-Many
+- [x] Many-to-Many
 
 ---
 
 ## Pagination
 
-- [ ] Pagination
+- [x] Pagination
 - [ ] Filtering
 - [ ] Searching
 - [ ] Sorting
@@ -307,7 +306,7 @@ nodejs-route/
 
 # 📈 Progress
 
-**Completed:** 15%
+**Completed:** 50%
 
 Progress will be updated as I complete each section.
 
