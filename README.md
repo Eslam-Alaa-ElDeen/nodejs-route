@@ -73,10 +73,10 @@ The purpose of this repository is to:
 
 ## REST API
 
-- [ ] REST Principles
-- [ ] CRUD Operations
-- [ ] API Design
-- [ ] Postman Testing
+- [x] REST Principles
+- [x] CRUD Operations
+- [x] API Design
+- [x] Postman Testing
 
 ---
 
@@ -135,34 +135,34 @@ The purpose of this repository is to:
 - [x] JWT
 - [x] Password Hashing (bcrypt)
 - [x] Encryption
-- [ ] Helmet
+- [x] Helmet
 - [x] CORS
-- [ ] CSRF Protection
-- [ ] Rate Limiting
+- [x] CSRF Protection
+- [x] Rate Limiting
 
 ---
 
 ## Email
 
-- [ ] Nodemailer
-- [ ] Verification Emails
-- [ ] Password Reset
+- [x] Nodemailer
+- [x] Verification Emails
+- [x] Password Reset
 
 ---
 
 ## Error Handling
 
 - [x] Global Error Handler
-- [ ] Custom Errors
-- [ ] Async Error Handling
+- [x] Custom Errors
+- [x] Async Error Handling
 
 ---
 
 ## File Uploads
 
-- [ ] Multer
-- [ ] Image Upload
-- [ ] File Validation
+- [x] Multer
+- [x] Image Upload
+- [x] File Validation
 
 ---
 
@@ -177,9 +177,9 @@ The purpose of this repository is to:
 ## Pagination
 
 - [x] Pagination
-- [ ] Filtering
-- [ ] Searching
-- [ ] Sorting
+- [x] Filtering
+- [x] Searching
+- [x] Sorting
 
 ---
 
@@ -224,7 +224,7 @@ The purpose of this repository is to:
 
 ## Social Login
 
-- [ ] Google OAuth
+- [x] Google OAuth
 
 ---
 
@@ -272,8 +272,8 @@ The purpose of this repository is to:
 
 ## Redis
 
-- [ ] Redis Fundamentals
-- [ ] Caching
+- [x] Redis Fundamentals
+- [x] Caching
 - [ ] Session Storage
 
 ---
@@ -306,7 +306,7 @@ nodejs-route/
 
 # 📈 Progress
 
-**Completed:** 50%
+**Completed:** 60%
 
 Progress will be updated as I complete each section.
 
