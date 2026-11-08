@@ -1,0 +1,19 @@
+{
+  "name": "typescript&oop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./node_modules/nodemon/bin/nodemon.js dist/index.js",
+    "start:conc": "node ./node_modules/concurrently/dist/bin/index.js \"node ./node_modules/typescript/bin/tsc --watch\" \"node ./node_modules/nodemon/bin/nodemon.js dist/index.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^10.0.6",
+    "nodemon": "^3.1.14",
+    "typescript": "^7.0.2"
+  }
+}
